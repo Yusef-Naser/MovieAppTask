@@ -261,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA221562B699AE000ECB129 /* Movies.xcdatamodeld */,
+				2C2B9A0E2B67E7670015ED16 /* README.md */,
 				2CD3D4892B6509D200CA34E0 /* MovieApp */,
 				2C7F15E32B6A54CB007149E1 /* MovieAppTests */,
 				2CD3D4882B6509D200CA34E0 /* Products */,
@@ -293,7 +294,6 @@
 				2CD3D4932B6509D400CA34E0 /* Assets.xcassets */,
 				2CD3D4952B6509D400CA34E0 /* LaunchScreen.storyboard */,
 				2CD3D4982B6509D400CA34E0 /* Info.plist */,
-				2C2B9A0E2B67E7670015ED16 /* README.md */,
 			);
 			path = MovieApp;
 			sourceTree = "<group>";
