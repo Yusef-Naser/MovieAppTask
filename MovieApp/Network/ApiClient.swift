@@ -21,9 +21,9 @@ struct APIClient <Entity : Codable>{
                     
                     if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers),
                        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
-                        print(String(decoding: jsonData, as: UTF8.self))
+                        debugPrint(String(decoding: jsonData, as: UTF8.self))
                     } else {
-                        print("json data malformed")
+                        debugPrint("json data malformed")
                     }
 
                     
