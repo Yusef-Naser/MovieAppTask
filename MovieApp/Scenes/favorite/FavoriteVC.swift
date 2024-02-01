@@ -62,7 +62,7 @@ extension FavoriteVC : UITableViewDelegate , UITableViewDataSource , CellMovieDe
             return
         }
         viewModel?.deleteMovie(at: indexPath)
-        listIDs.remove(at: indexPath.row)
+      //  listIDs.remove(at: indexPath.row)
         self.mainView.tableView.reloadData()
     }
     

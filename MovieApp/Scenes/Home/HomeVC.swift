@@ -11,7 +11,7 @@ import UIKit
 class HomeVC : BaseVC<HomeView> {
     
     var viewModel : HomeViewModel?
-    var dataController  = DataController.shared
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,24 +90,9 @@ extension HomeVC : UITableViewDelegate , UITableViewDataSource , CellMovieDelega
         guard let indexPath = self.mainView.tableView.indexPath(for: cell ) , let movie = viewModel?.getItem(index: indexPath) else {
             return
         }
-        addMovie(entityMovie: movie , image: cell.imageMovies.image )
-        viewModel?.updateItemFavorite(indexPath: indexPath , isFavorite: true )
+        viewModel?.addOrDeleteMovie(entityMovie: movie , image: cell.imageMovies.image , indexPath: indexPath )
         self.mainView.tableView.reloadData()
     }
     
-    func addMovie(entityMovie : EntityMovies, image : UIImage?) {
-        let movie = Movie(context: dataController.viewContext)
-        movie.id = Int64(entityMovie.id ?? 0)
-        movie.creationDate = Date()
-        movie.title = entityMovie.title ?? ""
-        movie.releaseDate = entityMovie.releaseDate ?? ""
-        movie.poster = image?.jpegData(compressionQuality: 0.5)
-        do {
-            try dataController.viewContext.save()
-            listIDs.append(entityMovie.id ?? 0)
-        }catch {
-            print(error.localizedDescription)
-        }
-
-    }
+    
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-var listIDs : [Int] = []
+//var listIDs : [Int] = []
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -25,12 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         dataController.load()
         
-        let viewModel = FavoriteViewModel()
-        if let items = viewModel.fetchedResultsController.sections?[0].objects as? [Movie] {
-            listIDs = items.map { movie in
-                Int(movie.id)
-            }
-        }
+//        let viewModel = FavoriteViewModel()
+//        if let items = viewModel.fetchedResultsController.sections?[0].objects as? [Movie] {
+//            listIDs = items.map { movie in
+//                Int(movie.id)
+//            }
+//        }
         
         let window = UIWindow(windowScene: windowScene)
         let tabBar = MainTabBar()
